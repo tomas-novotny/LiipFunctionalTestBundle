@@ -33,6 +33,19 @@ class WebTestCaseConfigLeanFrameworkTest extends WebTestCase
         return AppConfigLeanFrameworkKernel::class;
     }
 
+    public function setUp(): void
+    {
+        set_error_handler(function($errno, $errstr, $errfile, $errline) {
+            throw new \Exception($errstr);
+        });
+    }
+
+    public function tearDown(): void
+    {
+        restore_error_handler();
+    }
+
+
     public function testAssertStatusCode(): void
     {
         $client = static::makeClient();

@@ -244,7 +244,7 @@ class WebTestCaseTest extends WebTestCase
     {
         $response = $this->getMockBuilder('Symfony\Component\HttpFoundation\Response')
             ->disableOriginalConstructor()
-            ->setMethods(['getContent'])
+            ->onlyMethods(['getContent'])
             ->getMock();
 
         $response->expects($this->any())

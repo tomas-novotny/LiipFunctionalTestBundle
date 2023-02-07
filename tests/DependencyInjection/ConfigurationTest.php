@@ -52,7 +52,7 @@ class ConfigurationTest extends WebTestCase
         );
     }
 
-    public function parametersProvider(): array
+    public static function parametersProvider(): array
     {
         return [
             ['command_verbosity', 'normal'],
